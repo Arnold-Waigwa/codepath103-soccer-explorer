@@ -1,9 +1,16 @@
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
+import soccerRouter from "./routes/index.js";
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+app.use(express.static(path.resolve(__dirname, "../client/public")));
 
-app.listen(3000, () => console.log("successfully connected"));
+app.use("/", soccerRouter);
+
+app.listen(PORT, () => console.log(`Successfully connected on port ${PORT}`));
