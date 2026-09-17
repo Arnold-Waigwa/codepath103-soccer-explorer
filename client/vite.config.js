@@ -5,4 +5,11 @@ export default defineConfig({
     outDir: "../server/public",
     emptyOutDir: true,
   },
+  server: {
+    proxy: {
+      "/pitches": {
+        target: "http://localhost:3000",
+      },
+    },
+  },
 });
