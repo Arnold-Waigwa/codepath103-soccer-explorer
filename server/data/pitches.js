@@ -73,6 +73,78 @@ const pitches = [
     submittedBy: "Sam",
     submittedOn: "2026-09-06T18:20:00",
   },
+  {
+    id: 7,
+    name: "Northgate Futsal Center",
+    pricePoint: "$$",
+    audience: "Local Leagues and Competitive Players",
+    image:
+      "https://images.pexels.com/photos/37097046/pexels-photo-37097046.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description:
+      "An indoor futsal center with two smooth-surface courts, electronic scoreboards, and spectator seating for evening league matches.",
+    submittedBy: "Chris",
+    submittedOn: "2026-09-07T11:30:00",
+  },
+  {
+    id: 8,
+    name: "Maple Park Futsal Court",
+    pricePoint: "$",
+    audience: "Families and Beginners",
+    image:
+      "https://images.pexels.com/photos/27573255/pexels-photo-27573255.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description:
+      "A neighborhood outdoor futsal court with perimeter fencing, shaded picnic tables, and space for beginner drills and weekend pickup games.",
+    submittedBy: "Taylor",
+    submittedOn: "2026-09-08T09:15:00",
+  },
+  {
+    id: 9,
+    name: "Eastwood Sports Hall",
+    pricePoint: "$$",
+    audience: "Students and Youth Teams",
+    image:
+      "https://images.pexels.com/photos/15673780/pexels-photo-15673780.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description:
+      "A hardwood futsal court inside a community sports hall, with changing rooms and bench seating for school tournaments and after-class games.",
+    submittedBy: "Riley",
+    submittedOn: "2026-09-09T15:45:00",
+  },
+  {
+    id: 10,
+    name: "Harborview Rooftop Soccer",
+    pricePoint: "$$$",
+    audience: "Adult Groups and Corporate Teams",
+    image:
+      "https://images.pexels.com/photos/21293971/pexels-photo-21293971.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description:
+      "A net-enclosed rooftop court for small-sided soccer, with harbor views, floodlights, and a covered seating area for breaks between games.",
+    submittedBy: "Devon",
+    submittedOn: "2026-09-10T17:00:00",
+  },
+  {
+    id: 11,
+    name: "Oakridge Indoor Soccer Club",
+    pricePoint: "$$$",
+    audience: "Club Teams and Training Groups",
+    image:
+      "https://images.pexels.com/photos/15818646/pexels-photo-15818646.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description:
+      "A covered turf facility for five-a-side soccer with warm-up space, equipment storage, and changing rooms for year-round team practice.",
+    submittedBy: "Jamie",
+    submittedOn: "2026-09-11T12:10:00",
+  },
+  {
+    id: 12,
+    name: "Southside Community Futsal",
+    pricePoint: "$",
+    audience: "Casual Players and Mixed-Ability Groups",
+    image:
+      "https://images.pexels.com/photos/15673779/pexels-photo-15673779.jpeg?auto=compress&cs=tinysrgb&w=800",
+    description:
+      "An indoor community futsal court with a smooth playing surface, clearly marked boundaries, and a relaxed atmosphere for friendly five-a-side matches.",
+    submittedBy: "Casey",
+    submittedOn: "2026-09-12T14:25:00",
+  },
 ];
 
 export default pitches;
