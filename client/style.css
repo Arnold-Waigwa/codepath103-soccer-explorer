@@ -1,0 +1,30 @@
+* {
+  box-sizing: border-box;
+}
+
+.pitch-collection ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 5px;
+}
+
+.pitch-collection ul > li {
+  list-style: none;
+}
+
+.pitch-item {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  max-width: 100%;
+}
+
+.pitch-item img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+}
