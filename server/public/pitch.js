@@ -1,5 +1,7 @@
 const mainContainer = document.querySelector("main.container");
-const pitchId = Number(window.location.pathname.split("/").filter(Boolean).pop());
+const pitchId = Number(
+  window.location.pathname.split("/").filter(Boolean).pop(),
+);
 
 function showMessage(message) {
   const paragraph = document.createElement("p");
@@ -57,7 +59,6 @@ async function loadPitch() {
 
   try {
     const response = await fetch("/pitches");
-    if (!response.ok) throw new Error(`Request failed: ${response.status}`);
     const pitches = await response.json();
     const pitch = pitches.find((item) => item.id === pitchId);
     if (pitch) renderPitch(pitch);

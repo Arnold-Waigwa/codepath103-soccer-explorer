@@ -12,4 +12,8 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static(path.resolve(__dirname, "./public")));
 app.use("/pitches", soccerPitches);
 
+app.use((req, res) => {
+  res.status(404).sendFile(path.resolve(__dirname, "./public/404.html"));
+});
+
 app.listen(PORT, () => console.log(`Successfully connected on port ${PORT}`));
