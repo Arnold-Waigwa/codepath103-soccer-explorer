@@ -33,7 +33,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented required features:
 
-<img src='[http://i.imgur.com/link/to/your/gif/file.gif](https://github.com/Arnold-Waigwa/codepath103-soccer-explorer/blob/main/demo/Kapture%202026-09-20%20at%2013.09.11.gif)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='demo/Kapture 2026-09-20 at 13.09.11.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ... Add GIF tool here
 
