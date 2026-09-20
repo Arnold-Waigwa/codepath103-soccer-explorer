@@ -31,13 +31,9 @@ The following **additional** features are implemented:
 
 ## Video Walkthrough
 
-\*\*Note: please be sure to
-
 Here's a walkthrough of implemented required features:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
-
-<!-- Replace this with whatever GIF tool you used! -->
+<img src='[http://i.imgur.com/link/to/your/gif/file.gif](https://github.com/Arnold-Waigwa/codepath103-soccer-explorer/blob/main/demo/Kapture%202026-09-20%20at%2013.09.11.gif)' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with ... Add GIF tool here
 
@@ -52,7 +48,7 @@ Describe any challenges encountered while building the app or any additional con
 
 ## License
 
-Copyright [yyyy] [name of copyright owner]
+Copyright [2026] [Arnold]
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
