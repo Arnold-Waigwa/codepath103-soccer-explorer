@@ -1,10 +1,11 @@
-// Fictional sample venues. pricePoint indicates relative hourly rental cost.
+// Fictional sample venues. hourlyRate is an illustrative USD rate, not a booking quote.
 // Stock photos are illustrative and do not depict these fictional venues.
 const pitches = [
   {
     id: 1,
     name: "Downtown Futsal Arena",
     pricePoint: "$$",
+    hourlyRate: 65,
     audience: "Competitive Players",
     image:
       "https://images.pexels.com/photos/3846652/pexels-photo-3846652.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -17,6 +18,7 @@ const pitches = [
     id: 2,
     name: "Greenfield Community Turf",
     pricePoint: "$",
+    hourlyRate: 35,
     audience: "Beginners and Casual Players",
     image:
       "https://images.pexels.com/photos/399187/pexels-photo-399187.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -29,6 +31,7 @@ const pitches = [
     id: 3,
     name: "Skyline Rooftop Turf",
     pricePoint: "$$$",
+    hourlyRate: 110,
     audience: "Adult Groups",
     image:
       "https://images.pexels.com/photos/11155157/pexels-photo-11155157.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -41,6 +44,7 @@ const pitches = [
     id: 4,
     name: "Riverside Futsal Court",
     pricePoint: "$",
+    hourlyRate: 30,
     audience: "Families and Youth Players",
     image:
       "https://images.pexels.com/photos/36681531/pexels-photo-36681531.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -53,6 +57,7 @@ const pitches = [
     id: 5,
     name: "All-Weather Soccer Dome",
     pricePoint: "$$$",
+    hourlyRate: 125,
     audience: "Club Teams",
     image:
       "https://images.pexels.com/photos/6077792/pexels-photo-6077792.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -65,6 +70,7 @@ const pitches = [
     id: 6,
     name: "Westside Futsal Hub",
     pricePoint: "$$",
+    hourlyRate: 70,
     audience: "Students and Recreational Teams",
     image:
       "https://images.pexels.com/photos/29388472/pexels-photo-29388472.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -77,6 +83,7 @@ const pitches = [
     id: 7,
     name: "Northgate Futsal Center",
     pricePoint: "$$",
+    hourlyRate: 80,
     audience: "Local Leagues and Competitive Players",
     image:
       "https://images.pexels.com/photos/37097046/pexels-photo-37097046.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -89,6 +96,7 @@ const pitches = [
     id: 8,
     name: "Maple Park Futsal Court",
     pricePoint: "$",
+    hourlyRate: 25,
     audience: "Families and Beginners",
     image:
       "https://images.pexels.com/photos/27573255/pexels-photo-27573255.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -101,6 +109,7 @@ const pitches = [
     id: 9,
     name: "Eastwood Sports Hall",
     pricePoint: "$$",
+    hourlyRate: 60,
     audience: "Students and Youth Teams",
     image:
       "https://images.pexels.com/photos/15673780/pexels-photo-15673780.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -113,6 +122,7 @@ const pitches = [
     id: 10,
     name: "Harborview Rooftop Soccer",
     pricePoint: "$$$",
+    hourlyRate: 115,
     audience: "Adult Groups and Corporate Teams",
     image:
       "https://images.pexels.com/photos/21293971/pexels-photo-21293971.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -125,6 +135,7 @@ const pitches = [
     id: 11,
     name: "Oakridge Indoor Soccer Club",
     pricePoint: "$$$",
+    hourlyRate: 130,
     audience: "Club Teams and Training Groups",
     image:
       "https://images.pexels.com/photos/15818646/pexels-photo-15818646.jpeg?auto=compress&cs=tinysrgb&w=800",
@@ -137,6 +148,7 @@ const pitches = [
     id: 12,
     name: "Southside Community Futsal",
     pricePoint: "$",
+    hourlyRate: 40,
     audience: "Casual Players and Mixed-Ability Groups",
     image:
       "https://images.pexels.com/photos/15673779/pexels-photo-15673779.jpeg?auto=compress&cs=tinysrgb&w=800",

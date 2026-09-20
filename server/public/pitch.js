@@ -1,0 +1,71 @@
+const mainContainer = document.querySelector("main.container");
+const pitchId = Number(window.location.pathname.split("/").filter(Boolean).pop());
+
+function showMessage(message) {
+  const paragraph = document.createElement("p");
+  paragraph.textContent = message;
+  const backLink = document.createElement("a");
+  backLink.href = "/";
+  backLink.textContent = "← All pitches";
+  mainContainer.replaceChildren(paragraph, backLink);
+}
+
+function renderPitch(pitch) {
+  document.title = `${pitch.name} | Soccer Explorer`;
+
+  const article = document.createElement("article");
+  article.className = "pitch-detail";
+
+  const image = document.createElement("img");
+  image.src = pitch.image;
+  image.alt = `Illustrative soccer venue photo for ${pitch.name}`;
+  image.className = "pitch-image";
+
+  const title = document.createElement("h2");
+  title.textContent = pitch.name;
+
+  const description = document.createElement("p");
+  description.textContent = pitch.description;
+
+  const details = document.createElement("dl");
+  for (const [label, value] of [
+    ["Sample hourly rate", `$${pitch.hourlyRate}/hour`],
+    ["Best for", pitch.audience],
+    ["Submitted by", pitch.submittedBy],
+    ["Submitted on", new Date(pitch.submittedOn).toLocaleDateString()],
+  ]) {
+    const term = document.createElement("dt");
+    term.textContent = label;
+    const definition = document.createElement("dd");
+    definition.textContent = value;
+    details.append(term, definition);
+  }
+
+  const backLink = document.createElement("a");
+  backLink.href = "/";
+  backLink.textContent = "← All pitches";
+
+  article.append(image, title, description, details);
+  mainContainer.replaceChildren(backLink, article);
+}
+
+async function loadPitch() {
+  if (!Number.isInteger(pitchId) || pitchId < 1) {
+    showMessage("Pitch not found. Return to the list to choose a venue.");
+    return;
+  }
+
+  try {
+    const response = await fetch("/pitches");
+    if (!response.ok) throw new Error(`Request failed: ${response.status}`);
+    const pitches = await response.json();
+    const pitch = pitches.find((item) => item.id === pitchId);
+    if (pitch) renderPitch(pitch);
+    else showMessage("Pitch not found. Return to the list to choose a venue.");
+  } catch (error) {
+    console.error("Error fetching pitches", error);
+    showMessage("Could not load this pitch. Please try again later.");
+  }
+}
+
+loadPitch();
