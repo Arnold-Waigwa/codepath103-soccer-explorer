@@ -12,7 +12,7 @@ const populatePitch = (pitch) => {
   const pitchItem = document.createElement("li");
   pitchItem.innerHTML = `<div class=pitch-item>
       <img src="${pitch.image}" alt="Illustrative soccer venue photo for ${pitch.name}" loading="lazy" />
-      <a href="/pitches/${pitch.id}">${pitch.name} </a>
+      <a href="/pitch.html?id=${pitch.id}">${pitch.name} </a>
       <small>Sample rate: $${pitch.hourlyRate}/hour</small>
   </div>`;
   return pitchItem;

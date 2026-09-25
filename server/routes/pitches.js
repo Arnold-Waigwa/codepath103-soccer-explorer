@@ -14,11 +14,14 @@ router.get("/", (req, res) => {
 
 router.get("/:id", (req, res) => {
   const id = Number(req.params.id);
-  if (!Number.isInteger(id) || !pitches.some((pitch) => pitch.id === id)) {
+  const pitch = pitches.find((pitch) => pitch.id === id);
+
+  if (!Number.isInteger(id) || !pitch) {
     res.status(404).sendFile(path.resolve(__dirname, "../public/404.html"));
     return;
   }
-  res.sendFile(path.resolve(__dirname, "../public/pitch.html"));
+
+  res.json(pitch);
 });
 
 export default router;

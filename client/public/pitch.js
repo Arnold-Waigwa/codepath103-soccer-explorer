@@ -1,7 +1,6 @@
 const mainContainer = document.querySelector("main.container");
-const pitchId = Number(
-  window.location.pathname.split("/").filter(Boolean).pop(),
-);
+const params = new URLSearchParams(window.location.search);
+const pitchId = Number(params.get("id"));
 
 function showMessage(message) {
   const paragraph = document.createElement("p");
@@ -58,9 +57,15 @@ async function loadPitch() {
   }
 
   try {
-    const response = await fetch("/pitches");
-    const pitches = await response.json();
-    const pitch = pitches.find((item) => item.id === pitchId);
+    const response = await fetch(`/pitches/${pitchId}`);
+    if (response.status === 404) {
+      showMessage("Pitch not found. Return to the list to choose a venue.");
+      return;
+    }
+    if (!response.ok) {
+      throw new Error(`Could not load pitch: ${response.status}`);
+    }
+    const pitch = await response.json();
     if (pitch) renderPitch(pitch);
     else showMessage("Pitch not found. Return to the list to choose a venue.");
   } catch (error) {

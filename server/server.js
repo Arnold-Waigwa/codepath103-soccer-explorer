@@ -17,3 +17,5 @@ app.use((req, res) => {
 });
 
 app.listen(PORT, () => console.log(`Successfully connected on port ${PORT}`));
+
+// /api/pitches/id
