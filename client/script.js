@@ -11,9 +11,9 @@ const pitchUnorderedList = document.createElement("ul");
 const populatePitch = (pitch) => {
   const pitchItem = document.createElement("li");
   pitchItem.innerHTML = `<div class=pitch-item>
-      <img src="${pitch.image}" alt="Illustrative soccer venue photo for ${pitch.name}" loading="lazy" />
+      <img src="${pitch.image_url}" alt="Illustrative soccer venue photo for ${pitch.name}" loading="lazy" />
       <a href="/pitch.html?id=${pitch.id}">${pitch.name} </a>
-      <small>Sample rate: $${pitch.hourlyRate}/hour</small>
+      <small>Sample rate: $${pitch.hourly_rate}/hour</small>
   </div>`;
   return pitchItem;
 };

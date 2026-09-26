@@ -18,7 +18,7 @@ function renderPitch(pitch) {
   article.className = "pitch-detail";
 
   const image = document.createElement("img");
-  image.src = pitch.image;
+  image.src = pitch.image_url;
   image.alt = `Illustrative soccer venue photo for ${pitch.name}`;
   image.className = "pitch-image";
 
@@ -30,10 +30,10 @@ function renderPitch(pitch) {
 
   const details = document.createElement("dl");
   for (const [label, value] of [
-    ["Sample hourly rate", `$${pitch.hourlyRate}/hour`],
+    ["Sample hourly rate", `$${pitch.hourly_rate}/hour`],
     ["Best for", pitch.audience],
-    ["Submitted by", pitch.submittedBy],
-    ["Submitted on", new Date(pitch.submittedOn).toLocaleDateString()],
+    ["Submitted by", pitch.submitted_by],
+    ["Submitted on", new Date(pitch.submitted_on).toLocaleDateString()],
   ]) {
     const term = document.createElement("dt");
     term.textContent = label;
