@@ -9,6 +9,7 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 5px;
+  padding: 0;
 }
 
 .pitch-collection ul > li {
@@ -47,6 +48,8 @@
   text-decoration: none;
 }
 header {
+  display: flex;
+  flex-direction: column;
   min-height: 320px;
   padding: 48px 24px;
   margin-bottom: 32px;
@@ -68,4 +71,9 @@ header h1 {
   margin: 0;
   font-size: clamp(2rem, 5vw, 3.5rem);
   max-width: 20ch;
+}
+
+header form {
+  width: 50%;
+  margin: 25px auto;
 }

@@ -4,13 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="module" src="/script.js"></script>
-    <title>Document</title>
+    <title>Soccer Explorer</title>
   </head>
   <body>
     <header>
       <h1>Look no further for your next game!</h1>
+      <form>
+        <input
+          type="search"
+          id="pitch-search"
+          placeholder="Name, description, or player group"
+        />
+      </form>
     </header>
     <main class="container">
+      <p class="search-status"></p>
       <div class="pitch-collection"></div>
     </main>
   </body>

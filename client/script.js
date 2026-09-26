@@ -1,22 +1,84 @@
 import "@picocss/pico/css/pico.min.css";
 import "./style.css";
 
-const data = await fetch("/pitches");
-const pitches = await data.json();
-
 const pitchCollection = document.querySelector(".pitch-collection");
+const form = document.querySelector("form");
+const searchInput = form.querySelector("input");
+const searchStatus = document.querySelector(".search-status");
+let pitches = [];
 
-const pitchUnorderedList = document.createElement("ul");
+const renderPitches = (visiblePitches) => {
+  const list = document.createElement("ul");
 
-const populatePitch = (pitch) => {
-  const pitchItem = document.createElement("li");
-  pitchItem.innerHTML = `<div class=pitch-item>
-      <img src="${pitch.image_url}" alt="Illustrative soccer venue photo for ${pitch.name}" loading="lazy" />
-      <a href="/pitch.html?id=${pitch.id}">${pitch.name} </a>
-      <small>Sample rate: $${pitch.hourly_rate}/hour</small>
-  </div>`;
-  return pitchItem;
+  visiblePitches.forEach((pitch) => {
+    const item = document.createElement("li");
+    const pitchDetailContainer = document.createElement("div");
+    pitchDetailContainer.className = "pitch-item";
+
+    const image = document.createElement("img");
+    image.src = pitch.image_url;
+    image.alt = `Illustrative soccer venue photo for ${pitch.name}`;
+
+    const name = document.createElement("a");
+    name.textContent = pitch.name;
+    name.href = `/pitch.html?id=${pitch.id}`;
+
+    const rate = document.createElement("small");
+    rate.textContent = `Sample rate: $${pitch.hourly_rate}/hour`;
+
+    const audience = document.createElement("small");
+    audience.textContent = pitch.audience;
+
+    // Created elements must be appended before they appear on the page.
+    pitchDetailContainer.append(image, name, rate, audience);
+    item.append(pitchDetailContainer);
+    list.append(item);
+  });
+
+  // Replace old results each time the search changes.
+  pitchCollection.replaceChildren(list);
+  if (visiblePitches.length === 0) {
+    searchStatus.textContent = "No pitches found.";
+  } else {
+    searchStatus.textContent = "Results: " + visiblePitches.length;
+  }
 };
 
-pitches.forEach((p) => pitchUnorderedList.appendChild(populatePitch(p)));
-pitchCollection.appendChild(pitchUnorderedList);
+const renderFilteredPitches = () => {
+  const query = searchInput.value.trim().toLowerCase();
+  const filteredPitches = pitches.filter((pitch) => {
+    // Combine the fields into one string, then check for the search text.
+    const text = pitch.name + " " + pitch.description + " " + pitch.audience;
+    return text.toLowerCase().includes(query);
+  });
+
+  renderPitches(filteredPitches);
+};
+
+const loadPitches = async () => {
+  searchInput.disabled = true;
+  searchStatus.textContent = "Loading pitches...";
+
+  try {
+    const response = await fetch("/pitches");
+    if (!response.ok) {
+      throw new Error("Could not load pitches");
+    }
+
+    pitches = await response.json();
+    searchInput.disabled = false;
+    renderFilteredPitches();
+  } catch (error) {
+    console.error("Error fetching pitches", error);
+    searchStatus.textContent =
+      "Could not load pitches. Please refresh to try again.";
+  }
+};
+
+searchInput.addEventListener("input", renderFilteredPitches);
+form.addEventListener("submit", (event) => {
+  event.preventDefault(); // Keep Enter from reloading the page.
+  renderFilteredPitches();
+});
+
+loadPitches();
