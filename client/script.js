@@ -29,13 +29,11 @@ const renderPitches = (visiblePitches) => {
     const audience = document.createElement("small");
     audience.textContent = pitch.audience;
 
-    // Created elements must be appended before they appear on the page.
     pitchDetailContainer.append(image, name, rate, audience);
     item.append(pitchDetailContainer);
     list.append(item);
   });
 
-  // Replace old results each time the search changes.
   pitchCollection.replaceChildren(list);
   if (visiblePitches.length === 0) {
     searchStatus.textContent = "No pitches found.";
@@ -77,7 +75,7 @@ const loadPitches = async () => {
 
 searchInput.addEventListener("input", renderFilteredPitches);
 form.addEventListener("submit", (event) => {
-  event.preventDefault(); // Keep Enter from reloading the page.
+  event.preventDefault();
   renderFilteredPitches();
 });
 
